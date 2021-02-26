@@ -88,7 +88,7 @@ dev.off()
 
 
 
-
+?par
 
 mf_init(x = mtq, theme = "dark", export = "png", filename = "map11.png",
         width = 460, res = 96)
@@ -97,4 +97,58 @@ mf_get_mtq() %>%
   mf_map(add = TRUE) %>%
   mf_map(c("POP","STATUS"), "prop_typo")
 mf_title()
+dev.off()
+
+
+
+# Import des données
+mtq <- mf_get_mtq()
+# Sélection d'une commune cible à
+# placer dans un carton
+mtq_target <- mtq[c(26),]
+mf_init(x = mtq, theme = "dark",
+        export = "png", filename = "map12.png",
+        width = 460, res = 96)
+# Affichage du fond de carte
+mf_map(mtq, add = TRUE)
+# Affichage de la commune cible
+mf_map(mtq_inset, add = T, col = "tomato")
+# Initialisation du carton
+mf_inset_on(x = mtq_target, pos = "topright", cex = .4)
+# Centrage du carton sur la commune cible
+mf_init(mtq_inset)
+# Affichage des communes
+mf_map(mtq, add = T)
+# Affichage de la commune cible
+mf_map(mtq_inset, add = T, col = "tomato")
+# Affichage d'un label
+mf_label(mtq_inset, var = "LIBGEO", col = "black")
+# Affichage d'une échelle
+mf_scale(size = 2)
+# Fermeture du carton
+mf_inset_off()
+# Ajout de l'habillage de la carte
+mf_layout()
+dev.off()
+
+
+
+
+
+# Import des données
+mtq <- mf_get_mtq()
+mf_init(x = mtq, theme = "iceberg",
+        export = "png", filename = "map13.png",
+        width = 460, res = 96)
+# Affichage du fond de carte
+mf_map(mtq, add = TRUE)
+# Initialisation du carton
+mf_inset_on(x = "worldmap", pos = "topright",
+            cex = .2)
+# Affichage de la carte de situation
+mf_worldmap(mtq)
+# Fermeture du carton
+mf_inset_off()
+# Ajout du titre
+mf_title(pos = "left")
 dev.off()

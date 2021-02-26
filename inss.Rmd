@@ -1,0 +1,22 @@
+---
+title: ""
+author: " "
+date: ""
+output: html_document
+---
+
+```{r, fig.width=5, fig.height=6, eval= FALSE}
+mf_theme("iceberg")
+# Import des données
+mtq <- mf_get_mtq()
+# Affichage du fond de carte
+mf_map(mtq)
+# Initialisation du carton
+mf_inset_on(x = "worldmap")
+# Affichage de la carte de situation
+mf_worldmap(mtq)
+# Fermeture du carton
+mf_inset_off()
+# Ajout du titre
+mf_title(pos = "left")
+```
