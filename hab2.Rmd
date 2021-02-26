@@ -1,0 +1,15 @@
+---
+title: ""
+author: " "
+date: ""
+output: html_document
+---
+
+```{r, fig.width=5, fig.height=6, eval= FALSE}
+mf_theme("dark")
+mf_get_mtq() %>% 
+  mf_shadow() %>%
+  mf_map(add = TRUE) %>%
+  mf_map(c("POP","STATUS"), "prop_typo")
+mf_title()
+```
