@@ -1,0 +1,39 @@
+---
+title: ""
+author: " "
+date: ""
+output: html_document
+---
+
+```{r, fig.width=5, fig.height=6, eval= FALSE}
+mf_theme("dark")
+# Import des données
+mtq <- mf_get_mtq()
+# Sélection d'une commune cible à
+# placer dans un carton
+mtq_target <- mtq[c(26),]
+# Affichage du fond de carte
+mf_map(mtq)
+# Affichage de la commune cible
+# sur la carte principale
+mf_map(mtq_inset, add = T, col = "tomato")
+# Initialisation du carton
+mf_inset_on(x = mtq_target, pos = "topright", 
+            cex = .4)
+# Centrage du carton sur la commune cible
+mf_init(mtq_inset)
+# Affichage des communes
+mf_map(mtq, add = T)
+# Affichage de la commune cible
+mf_map(mtq_inset, add = T, col = "tomato")
+# Affichage d'un label
+mf_label(mtq_inset, var = "LIBGEO", 
+         col = "black")
+# Affichage d'une échelle
+mf_scale(size = 2)
+# Fermeture du carton
+mf_inset_off()
+# Ajout de l'habillage de la carte 
+# principale
+mf_layout()
+```

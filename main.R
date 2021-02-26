@@ -86,3 +86,15 @@ mf_map(mtq, var = c("STATUS", "MED"), type = "symb_choro", pch = 21:23, border =
 mf_title('type = "symb_choro"')
 dev.off()
 
+
+
+
+
+mf_init(x = mtq, theme = "dark", export = "png", filename = "map11.png",
+        width = 460, res = 96)
+mf_get_mtq() %>%
+  mf_shadow() %>%
+  mf_map(add = TRUE) %>%
+  mf_map(c("POP","STATUS"), "prop_typo")
+mf_title()
+dev.off()
