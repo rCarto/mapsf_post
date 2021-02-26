@@ -8,11 +8,7 @@ output: html_document
 ```{r, fig.width=5, fig.height=6, eval= FALSE}
 library(mapsf)
 # Définition d'un thème
-mf_theme(bg = "#232525", fg = "#A9B7C6",
-         mar = c(.5,.5,2,.5),
-         tab = FALSE, pos = "left",inner = F,
-         line = 1.5,
-         cex = 1.2)
+mf_theme("candy")
 # Import du jeu de données d'exemple
 mtq <- mf_get_mtq()
 # Affichage d'une ombre pour une couche de polygones
@@ -30,5 +26,4 @@ mf_title()
 # Afficher une annotation
 mf_annotation(mtq[14, ],
               txt = "Ceci est\nune annotation")
-
 ```

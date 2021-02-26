@@ -1,13 +1,6 @@
-
-
-legend(x = "right", legend = c("subway stations", "r"))
 library(mapsf)
 # Définition d'un thème
-mf_theme(bg = "#232525", fg = "#A9B7C6",
-         mar = c(.5,.5,2,.5),
-         tab = FALSE, pos = "left",inner = F,
-         line = 1.5,
-         cex = 1.2)
+mf_init(x = mtq, theme = "candy", export = "png", filename = "map10.png", width = 460, res = 96)
 # Import du jeu de données d'exemple
 mtq <- mf_get_mtq()
 # Affichage d'une ombre pour une couche de polygones
@@ -23,9 +16,9 @@ mf_credits(txt = "T. Giraud, 2021 - mapsf 0.1.1")
 # Affichage d'un titre
 mf_title()
 # Afficher une annotation
-mf_annotation(mtq[14, ],
+mf_annotation(mtq[14, ], halo = TRUE,
               txt = "Ceci est\nune annotation")
-
+dev.off()
 
 # mf_theme(bg = "#232525", fg = "#A9B7C6", mar = c(.5,.5,2,.5),
 #          tab = FALSE, pos = "left",inner = F, line = 1.5, cex = 1.2 )
