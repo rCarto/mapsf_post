@@ -1,0 +1,51 @@
+---
+title: ""
+author: " "
+date: ""
+output: html_document
+---
+
+```{r, fig.width=5, fig.height=6, eval= FALSE}
+library(mapsf)
+th <- mf_theme("darkula")
+mtq <- mf_get_mtq()
+bks <- round(mf_get_breaks(x = mtq$MED,
+                           nbreaks = 5,b
+                           reaks = "quantile"), 
+             digits = -2)
+pal <- hcl.colors(n = 5, palette = "Cividis")
+
+mf_init(mtq, expandBB = c(0,0,0,0),export = "png", 
+        filename = "inset.png", width = 460, 
+        res = 96)
+mf_map(
+  x = mtq, var = "MED", type = "choro",
+  pal = pal,
+  breaks = bks, 
+  leg_pos = NA, 
+  add = T
+)
+
+mf_inset_on( fig = c(0.75, .95, 0.84, .99))
+par(mar = c(0,0,1.7,0))
+hist(mtq$MED, breaks = bks, col = rev(pal), 
+     border = th$fg,
+     axes = F, labels = "", xlab="", ylab = "", 
+     main ="")
+axis(side = 1, at = bks, las = 2,
+     tick = FALSE, line = -.9, 
+     cex.axis = .7, col.axis = th$fg)
+title("Median Income\nin euros", cex.main = .8, 
+      col.main = th$fg, font.main = 1, 
+      adj = c(0))
+mf_inset_off()
+
+mf_title("Wealth in Martinique, 2015", 
+         pos = "left")
+mf_scale(5)
+mf_credits(paste0(
+  "Sources: Insee and IGN, 2018\n",
+  "mapsf ", packageVersion("mapsf")))
+dev.off()
+
+```
