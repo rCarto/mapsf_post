@@ -1,0 +1,20 @@
+---
+title: ""
+author: " "
+date: ""
+output: html_document
+---
+
+```{r, fig.width=5, fig.height=6, eval= FALSE}
+# define a target 
+target <- mtq[1,]
+# initiate a map centered on target
+mf_init(target, theme = "darkula", 
+        expandBB = c(0, .3, 0, 0))
+# display all municipalitoes
+mf_map(mtq, col = NA, 
+       border = "white", add = TRUE)
+# display target
+mf_map(target, col = "tomato4", 
+       border = "white", add = TRUE)
+```
