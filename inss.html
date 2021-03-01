@@ -168,17 +168,17 @@ pre code {
 
 
 <pre class="r"><code>mf_theme(&quot;iceberg&quot;)
-# Import des données
+# import the sample dataset
 mtq &lt;- mf_get_mtq()
-# Affichage du fond de carte
+# display a base map
 mf_map(mtq)
-# Initialisation du carton
+# open the inset
 mf_inset_on(x = &quot;worldmap&quot;)
-# Affichage de la carte de situation
+# display the worldmap
 mf_worldmap(mtq)
-# Fermeture du carton
+# close the inset
 mf_inset_off()
-# Ajout du titre
+# add a title
 mf_title(pos = &quot;left&quot;)</code></pre>
 
 

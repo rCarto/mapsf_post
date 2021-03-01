@@ -7,33 +7,33 @@ output: html_document
 
 ```{r, fig.width=5, fig.height=6, eval= FALSE}
 mf_theme("dark")
-# Import des données
+# data import
 mtq <- mf_get_mtq()
-# Sélection d'une commune cible à
-# placer dans un carton
+# Selection of a target municipality
+# to display in the inset
 mtq_target <- mtq[c(26),]
-# Affichage du fond de carte
+# Display the base map
 mf_map(mtq)
-# Affichage de la commune cible
-# sur la carte principale
+# display the target 
+# on the main map
 mf_map(mtq_inset, add = T, col = "tomato")
-# Initialisation du carton
+# open the inset
 mf_inset_on(x = mtq_target, pos = "topright", 
             cex = .4)
-# Centrage du carton sur la commune cible
+# center on on the target munucipality
 mf_init(mtq_inset)
-# Affichage des communes
+# display all municipalities
 mf_map(mtq, add = T)
-# Affichage de la commune cible
+# dispaly the target municupality
 mf_map(mtq_inset, add = T, col = "tomato")
-# Affichage d'un label
+# display a label
 mf_label(mtq_inset, var = "LIBGEO", 
          col = "black")
-# Affichage d'une échelle
+# display a scale bar
 mf_scale(size = 2)
-# Fermeture du carton
+# close the inset
 mf_inset_off()
-# Ajout de l'habillage de la carte 
-# principale
+# display the map layout of  
+# the main map
 mf_layout()
 ```

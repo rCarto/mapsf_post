@@ -7,16 +7,16 @@ output: html_document
 
 ```{r, fig.width=5, fig.height=6, eval= FALSE}
 mf_theme("iceberg")
-# Import des données
+# import the sample dataset
 mtq <- mf_get_mtq()
-# Affichage du fond de carte
+# display a base map
 mf_map(mtq)
-# Initialisation du carton
+# open the inset
 mf_inset_on(x = "worldmap")
-# Affichage de la carte de situation
+# display the worldmap
 mf_worldmap(mtq)
-# Fermeture du carton
+# close the inset
 mf_inset_off()
-# Ajout du titre
+# add a title
 mf_title(pos = "left")
 ```

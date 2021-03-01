@@ -168,23 +168,23 @@ pre code {
 
 
 <pre class="r"><code>library(mapsf)
-# Définition d&#39;un thème
+# select a theme
 mf_theme(&quot;candy&quot;)
-# Import du jeu de données d&#39;exemple
+# import sample dataset
 mtq &lt;- mf_get_mtq()
-# Affichage d&#39;une ombre pour une couche de polygones
+# display the shadow of a polygon layer
 mf_shadow(mtq)
-# Affichage d&#39;une couche de polygones
+# display polygons
 mf_map(mtq, add = TRUE)
-# Affichage d&#39;une flèche nord
+# display north arrow
 mf_arrow()
-# Affichage d&#39;une échelle
+# display scale bar
 mf_scale(size = 5)
-# Afficher les crédits
+# display credits
 mf_credits(txt = &quot;T. Giraud, 2021 - mapsf 0.1.1&quot;)
-# Affichage d&#39;un titre
+# display title
 mf_title()
-# Afficher une annotation
+# display an annotation
 mf_annotation(mtq[14, ],
               txt = &quot;Ceci est\nune annotation&quot;)</code></pre>
 

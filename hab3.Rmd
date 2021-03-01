@@ -7,23 +7,23 @@ output: html_document
 
 ```{r, fig.width=5, fig.height=6, eval= FALSE}
 library(mapsf)
-# Définition d'un thème
+# select a theme
 mf_theme("candy")
-# Import du jeu de données d'exemple
+# import sample dataset
 mtq <- mf_get_mtq()
-# Affichage d'une ombre pour une couche de polygones
+# display the shadow of a polygon layer
 mf_shadow(mtq)
-# Affichage d'une couche de polygones
+# display polygons
 mf_map(mtq, add = TRUE)
-# Affichage d'une flèche nord
+# display north arrow
 mf_arrow()
-# Affichage d'une échelle
+# display scale bar
 mf_scale(size = 5)
-# Afficher les crédits
+# display credits
 mf_credits(txt = "T. Giraud, 2021 - mapsf 0.1.1")
-# Affichage d'un titre
+# display title
 mf_title()
-# Afficher une annotation
+# display an annotation
 mf_annotation(mtq[14, ],
               txt = "Ceci est\nune annotation")
 ```
