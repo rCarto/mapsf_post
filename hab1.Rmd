@@ -24,7 +24,7 @@ mf_inset_on(x = mtq_target, pos = "topright",
 mf_init(mtq_inset)
 # display all municipalities
 mf_map(mtq, add = T)
-# dispaly the target municupality
+# display the target municipality
 mf_map(mtq_inset, add = T, col = "tomato")
 # display a label
 mf_label(mtq_inset, var = "LIBGEO", 
