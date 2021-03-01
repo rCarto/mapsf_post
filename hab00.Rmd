@@ -1,0 +1,12 @@
+---
+title: ""
+author: " "
+date: ""
+output: html_document
+---
+
+```{r, fig.width=5, fig.height=6, eval= FALSE}
+library(mapsf)
+mtq <- mf_get_mtq()
+mf_map(x = mtq, var = "MED", type = "choro")
+```

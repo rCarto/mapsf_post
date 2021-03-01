@@ -15,8 +15,9 @@ bks <- round(mf_get_breaks(x = mtq$MED,
              digits = -2)
 pal <- hcl.colors(n = 5, palette = "Cividis")
 
-mf_init(mtq, expandBB = c(0,0,0,0),export = "png", 
-        filename = "inset.png", width = 460, 
+mf_init(mtq, theme = "darkula", expandBB = c(0,0,0.05,0),
+        export = "png", 
+        filename = "inset2.png", width = 460, 
         res = 96)
 mf_map(
   x = mtq, var = "MED", type = "choro",
