@@ -10,14 +10,14 @@ library(mapsf)
 th <- mf_theme("darkula")
 mtq <- mf_get_mtq()
 bks <- round(mf_get_breaks(x = mtq$MED,
-                           nbreaks = 5,b
-                           reaks = "quantile"), 
+                           nbreaks = 5,
+                           breaks = "quantile"), 
              digits = -2)
 pal <- hcl.colors(n = 5, palette = "Cividis")
 
 mf_init(mtq, theme = "darkula", expandBB = c(0,0,0.05,0),
         export = "png", 
-        filename = "inset2.png", width = 460, 
+        filename = "inset3.png", width = 460, 
         res = 96)
 mf_map(
   x = mtq, var = "MED", type = "choro",
@@ -29,7 +29,7 @@ mf_map(
 
 mf_inset_on( fig = c(0.75, .95, 0.84, .99))
 par(mar = c(0,0,1.7,0))
-hist(mtq$MED, breaks = bks, col = rev(pal), 
+hist(mtq$MED, breaks = bks, col = pal, 
      border = th$fg,
      axes = F, labels = "", xlab="", ylab = "", 
      main ="")

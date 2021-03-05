@@ -171,14 +171,14 @@ pre code {
 th &lt;- mf_theme(&quot;darkula&quot;)
 mtq &lt;- mf_get_mtq()
 bks &lt;- round(mf_get_breaks(x = mtq$MED,
-                           nbreaks = 5,b
-                           reaks = &quot;quantile&quot;), 
+                           nbreaks = 5,
+                           breaks = &quot;quantile&quot;), 
              digits = -2)
 pal &lt;- hcl.colors(n = 5, palette = &quot;Cividis&quot;)
 
 mf_init(mtq, theme = &quot;darkula&quot;, expandBB = c(0,0,0.05,0),
         export = &quot;png&quot;, 
-        filename = &quot;inset2.png&quot;, width = 460, 
+        filename = &quot;inset3.png&quot;, width = 460, 
         res = 96)
 mf_map(
   x = mtq, var = &quot;MED&quot;, type = &quot;choro&quot;,
@@ -190,7 +190,7 @@ mf_map(
 
 mf_inset_on( fig = c(0.75, .95, 0.84, .99))
 par(mar = c(0,0,1.7,0))
-hist(mtq$MED, breaks = bks, col = rev(pal), 
+hist(mtq$MED, breaks = bks, col = pal, 
      border = th$fg,
      axes = F, labels = &quot;&quot;, xlab=&quot;&quot;, ylab = &quot;&quot;, 
      main =&quot;&quot;)
