@@ -152,3 +152,32 @@ mf_inset_off()
 # Ajout du titre
 mf_title(pos = "left")
 dev.off()
+
+
+
+
+
+
+library(mapsf)
+x <- mf_theme(mar = c(0,0,0,0))
+mtq <- mf_get_mtq()
+mf_init(x = mtq, theme =x,
+        export = "png", filename = "map14.png",
+        width = 460, res = 96)
+mf_map(x = mtq, var = "MED", type = "choro", add = T)
+dev.off()
+
+
+# define a target
+target <- mtq[1,]
+# initiate a map centered on target
+mf_init(x = target, theme = "darkula", expandBB = c(0, .3, 0, 0),
+        export = "png", filename = "map15.png",
+        width = 300, res = 96)
+# display all municipalitoes
+mf_map(mtq, col = NA,
+       border = "white", add = TRUE)
+# display target
+mf_map(target, col = "tomato4",
+       border = "white", add = TRUE)
+dev.off()
