@@ -16,18 +16,18 @@ mtq_target <- mtq[c(26),]
 mf_map(mtq)
 # display the target 
 # on the main map
-mf_map(mtq_inset, add = T, col = "tomato")
+mf_map(mtq_target, add = T, col = "tomato")
 # open the inset
 mf_inset_on(x = mtq_target, pos = "topright", 
             cex = .4)
 # center on on the target munucipality
-mf_init(mtq_inset)
+mf_init(mtq_target)
 # display all municipalities
 mf_map(mtq, add = T)
 # display the target municipality
-mf_map(mtq_inset, add = T, col = "tomato")
+mf_map(mtq_target, add = T, col = "tomato")
 # display a label
-mf_label(mtq_inset, var = "LIBGEO", 
+mf_label(mtq_target, var = "LIBGEO", 
          col = "black")
 # display a scale bar
 mf_scale(size = 2)
